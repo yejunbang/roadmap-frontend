@@ -4,3 +4,6 @@
 $ git config --global user.name "pony"
 $ git config --global user.email "pony@126.com"
 ```
+
+- 生成密钥  
+`ssh-keygen -t rsa -C "youremail@example.com"`
