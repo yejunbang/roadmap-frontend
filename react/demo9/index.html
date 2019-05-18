@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      class MyComponent extends React.Component{
+        constructor(props){
+          super(props);
+          this.state = {
+            text: ''
+          }
+          this.handleChange = this.handleChange.bind(this);
+        }
+        handleChange(e){
+          this.setState({
+            text: e.target.value
+          })
+        }
+        render(){
+          return (
+            <div>
+              <input value={this.state.text} onChange={this.handleChange}/>
+              <p>{this.state.text}</p>
+            </div>)
+        }
+      }
+      ReactDOM.render(<MyComponent/>,document.getElementById('example'))
+    </script>
+  </body>
+</html>

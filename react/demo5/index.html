@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      class MyNodeList extends React.Component{
+        render(){
+          //this.props.children 的值有三种可能：如果当前组件没有子节点，它就是 undefined ;如果有一个子节点，数据类型是 object ；如果有多个子节点，数据类型就是 array
+          // 官方推荐用React.Children处理，避免上面的情况
+          return <ul>{
+            React.Children.map(this.props.children, (child)=>{return <li>{child}</li>})
+            }</ul>
+        }
+      }
+      ReactDOM.render(<MyNodeList><span>pogba1</span><span>pogba2</span><span>pogba3</span></MyNodeList>,document.getElementById('example'))
+    </script>
+  </body>
+</html>

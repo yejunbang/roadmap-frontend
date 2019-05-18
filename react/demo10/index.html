@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      class MyComponent extends React.Component{
+        constructor(props){
+          super(props);
+          this.state = {
+            opacity: 1.0
+          }
+        }
+        componentDidMount(){
+          // this.timer = setInterval(function(){
+          //   this.setState({opacity: this.state.opacity-.05})
+          // }.bind(this),100)
+          this.timer = setInterval(()=>{this.setState({opacity: this.state.opacity-.05})},100)
+        }
+        componentWillUnmount(){
+          if(this.state.opacity===0){
+            clearInterval(this.timer)
+          }
+        }
+        render(){
+          return (
+            <div>
+              <h1 style={{opacity: this.state.opacity}}>
+                Hello, World!
+              </h1>
+            </div>)
+        }
+      }
+      ReactDOM.render(<MyComponent/>,document.getElementById('example'))
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <script src="../build/react.development.js"></script>
+    <script src="../build/react-dom.development.js"></script>
+    <script src="../build/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      class MyComponent extends React.Component{
+        constructor(props){
+          super(props);
+          this.state = {
+            like: false
+          }
+          this.handleClick = this.handleClick.bind(this);
+        }
+        handleClick(){
+          this.setState({
+            like: !this.state.like
+          })
+        }
+        render(){
+          return (
+            <div>
+              <h1>{this.state.like?'I like it': 'I do not like it'}</h1>
+              <button onClick={this.handleClick}>click</button>
+            </div>)
+        }
+      }
+      ReactDOM.render(<MyComponent/>,document.getElementById('example'))
+    </script>
+  </body>
+</html>
