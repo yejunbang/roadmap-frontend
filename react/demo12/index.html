@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset='utf-8'>
-    <script src="../build/react.development.js"></script>
-    <script src="../build/react-dom.development.js"></script>
-    <script src="../build/babel.min.js"></script>
-    <script src="../build/jquery.min.js"></script>
-  </head>
-  <body>
-    <div id="example"></div>
-    <script type="text/babel">
-      class MyComponent extends React.Component{
+
+<head>
+  <meta charset='utf-8'>
+  <script src="../build/react.development.js"></script>
+  <script src="../build/react-dom.development.js"></script>
+  <script src="../build/babel.min.js"></script>
+  <script src="../build/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id="example"></div>
+  <script type="text/babel">
+    class MyComponent extends React.Component{
         constructor(props){
           super(props);
           this.state = {
@@ -43,9 +45,10 @@
               </main>
             );
           }
-          }
+        }
         }
       ReactDOM.render(<MyComponent promise={$.getJSON('https://api.github.com/search/repositories?q=javascript&sort=stars')} />,document.getElementById('example'))
     </script>
-  </body>
+</body>
+
 </html>
