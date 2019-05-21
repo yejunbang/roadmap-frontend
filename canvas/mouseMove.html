@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>test</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id='canvas' style='position: absolute;z-index:-2;'></canvas>
+  <p style='color: #fff;'>还是说sdsinnonaosfhdasiofh9</p>
+  <script type="text/javascript">
+    var WIDTH = document.body.clientWidth;
+    var HEIGHT = document.body.clientHeight;
+    var canvas = document.getElementById('canvas');
+    canvas.width = WIDTH;
+    canvas.height = HEIGHT;
+    var context = canvas.getContext('2d');
+    var param = {
+      num: 100,
+      color: false,
+      radius: .9,
+      maxRadius: 10, //最大半径3就消失
+      interval: 0.9, // 每次增大半径
+    };
+    var circle = []
+    var color, color2;
+    window.onmousemove = function (event) {
+      var mouseX = event.clientX;
+      var mouseY = event.clientY;
+      circle.push({
+        mouseX: mouseX,
+        mouseY: mouseY,
+        radius: param.radius,
+      })
+    }
+
+    function animate() {
+      context.clearRect(0, 0, WIDTH, HEIGHT)
+      for (var i = 0; i < circle.length; i++) {
+        context.fillStyle = '#FF6461';
+        context.beginPath();
+        context.arc(circle[i].mouseX, circle[i].mouseY, circle[i].radius, Math.PI * 2, false);
+        context.closePath();
+        context.fill();
+        circle[i].radius += param.interval
+        if (circle[i].radius > param.maxRadius) {
+          circle.splice(i, 1)
+          i--
+        }
+      }
+      requestAnimationFrame(animate);
+    }
+    window.onload = function () {
+      // init();
+      animate();
+    }
+  </script>
+</body>
+
+</html>

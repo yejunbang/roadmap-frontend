@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF-8' />
+  <title>first canvas</title>
+</head>
+<style>
+  #canvas {
+    background-color: #000;
+  }
+</style>
+
+<body>
+  <canvas id='canvas' width='400' height='400'></canvas>
+  <script type='text/javascript'>
+    var circle = document.getElementById('canvas');
+    var context = circle.getContext('2d')
+    context.beginPath();
+    context.arc(100, 100, 50, 0, Math.PI * 2, true);
+    context.closePath();
+    context.fillStyle = '#fff';
+    context.fill();
+  </script>
+</body>
+
+</html>

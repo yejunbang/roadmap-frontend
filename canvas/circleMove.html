@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>test</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id='canvas'></canvas>
+  <script type="text/javascript">
+    var WIDTH = document.body.clientWidth;
+    var HEIGHT = document.body.clientHeight;
+    var canvas = document.getElementById('canvas');
+    canvas.width = WIDTH;
+    canvas.height = HEIGHT;
+    var context = canvas.getContext('2d');
+
+    function RandomCircle(index, x, y) {
+      this.index = index;
+      this.x = x;
+      this.y = y;
+      this.radius = Math.random() * 2 + 1;
+      var opacity = Math.floor(Math.random() * 10 + 1) / 10 / 2
+      this.color = 'rgba(255,255,255,' + opacity + ')';
+    }
+    RandomCircle.prototype.draw = function () {
+      context.fillStyle = this.color;
+      context.shadowBlur = this.radius * 2;
+      context.beginPath();
+      context.arc(this.x, this.y, this.radius, Math.PI * 2, false);
+      context.closePath();
+      context.fill();
+    }
+    RandomCircle.prototype.move = function () {
+      this.y -= .15;
+      if (this.y <= 10) {
+        this.y = HEIGHT + 10
+      }
+      this.draw();
+    }
+    var circle = []
+
+    function animate() {
+      context.clearRect(0, 0, WIDTH, HEIGHT);
+      circle.forEach(item => item.move())
+      requestAnimationFrame(animate);
+    }
+
+    function init() {
+      for (var i = 0; i < 80; i++) {
+        circle[i] = new RandomCircle(i, Math.random() * WIDTH, Math.random() * HEIGHT)
+        circle[i].draw();
+      }
+      animate();
+    }
+    window.onload = function () {
+      init();
+    }
+  </script>
+</body>
+
+</html>
