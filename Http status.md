@@ -4,7 +4,7 @@
 - 401: 未授权
 - 403: server理解http的请求，但是拒绝访问资源，比如server有些文件需要权限才能访问
 - 404: http访问的server资源不存在
-- 405: http请求的method不允许，如delete资源不允许
+- 405: url正确，但http请求的method对应不上或者不允许，如delete资源不允许
 - 409: 请求的状态跟server的状态不一致，冲突
 - 414: 请求 URI 太长。
 - 415: 不支持的媒体类型。如：Content-Type: x-www-form-urlencoded; post请求报的错
