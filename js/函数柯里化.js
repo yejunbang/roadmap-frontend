@@ -39,3 +39,36 @@ let a = curry1(sum, 1);
 console.log('====output====>>>', a(2, 3)(4));
 console.log('====output====>>>', a(2)(3, 4));
 console.log('====output====>>>', a(2)(3)(4));
+
+
+function curry2(fn, ...args) {
+  return function () {
+    let rest = args.concat([...arguments])
+    if (rest.length < fn.length) {
+      return curry2.call(this, fn, ...rest)
+    } else {
+      return fn.apply(this, rest)
+    }
+  }
+}
+
+let arr = new Array(5)
+
+function rand() {
+  return parseInt(Math.random() * 31 + 2, 10)
+}
+let i = 0
+
+function main() {
+  if (i >= 5) return
+  let num = rand();
+  if (arr.indexOf(num) === -1) {
+    arr[i] = num
+  }else{
+    main()
+  }
+  i++
+  main()
+}
+main();
+console.log('====output====>>>', arr);

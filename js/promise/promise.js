@@ -86,7 +86,7 @@ function resolvePromise(promise2, x, resolve, reject) {
   if (promise2 === x) {
     reject(new TypeError('chaining cycle'))
   }
-  if (x && (typeof x === 'object' || typeof x === 'function')) {
+  if (x && typeof x === 'object' || typeof x === 'function') {
     let used;
     try {
       let then = x.then;
