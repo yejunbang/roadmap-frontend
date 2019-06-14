@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+  <title>水平居中</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .inline {
+      text-align: center;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      margin: 0 auto;
+    }
+
+    .inline-block-box {
+      width: 200px;
+      height: 50px;
+      margin: 0 auto;
+    }
+
+    .absolute-box-1 {
+      width: 200px;
+      height: 50px;
+      background-color: #a55b5b;
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+
+    .absolute-box-2 {
+      width: 200px;
+      height: 50px;
+      background-color: #d6baba;
+      position: absolute;
+      /* top: 325px; */
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    .flex-box {
+      width: 100%;
+      height: 50px;
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+    }
+
+    .item-box {
+      width: 200px;
+      height: 50px;
+      background-color: #a9a9dc;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="inline">
+    <span>这是一个inline（行内元素</span>
+  </div>
+  <div class='box'>这是一个block（块级元素）</div>
+  <div class="inline-block-box">这是一个inline-block（行内块元素）</div>
+  <div class='absolute-box-1'></div>
+  <div class='absolute-box-2'></div>
+  <div class="flex-box">
+    <div class="item-box"></div>
+  </div>
+</body>
+
+</html>

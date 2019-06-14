@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>transform</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #canvas {
+      position: absolute;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+      animation-name: five-pointed-star;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    #canvas:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes five-pointed-star {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(90deg);
+      }
+
+      50% {
+        transform: rotate(180deg);
+      }
+
+      75% {
+        transform: rotate(270deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id='canvas'>这是一个自己会转的五角星</canvas>
+  <script type='text/javascript'>
+    //画五角星
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d')
+    canvas.width = '200'
+    canvas.height = '200'
+    context.strokeStyle = '#03a9f4'
+    context.beginPath();
+    context.moveTo(100, 0);
+    context.lineTo(150, 160);
+    context.lineTo(20, 60);
+    context.lineTo(180, 60);
+    context.lineTo(50, 160);
+    context.closePath();
+    context.stroke();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>垂直居中</title>
+  <style>
+    .inline-or-inline-block-box {
+      height: 50px;
+      line-height: 50px;
+      background-color: #ccc;
+    }
+
+    .middle-box {
+      height: 50px;
+      background-color: #a79f9f;
+    }
+
+    /* 使用伪元素，在父box后面加一个空的高度为100%,调准基准线为middle，这样子元素vertical-align就会根据这条基准线排列 */
+    .middle-box::after {
+      display: inline-block;
+      vertical-align: middle;
+      content: '';
+      height: 100%;
+    }
+
+    /* vertical-align:该属性定义行内元素的基线相对于该元素所在行的基线的垂直对齐。注意是：行内元素，默认值为baseline */
+    .middle-box>span {
+      vertical-align: middle;
+    }
+
+    .absolute-box-1 {
+      width: 200px;
+      height: 50px;
+      background-color: #edb9b9;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+    }
+
+    .absolute-box-2 {
+      width: 200px;
+      height: 50px;
+      background-color: #a95555;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+    .flex-box {
+      height: 100px;
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .item {
+      width: 200px;
+      height: 50px;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="inline-or-inline-block-box">
+    <span>这是inline</span>
+    <div style='display: inline-block'>这是inline-block</div>
+  </div>
+  <div class="middle-box">
+    <span>测试vertical-align: middle</span>
+  </div>
+  <div class="absolute-box-1"></div>
+  <div class="absolute-box-2"></div>
+  <div class="flex-box">
+    <div class="item"></div>
+  </div>
+</body>
+
+</html>
