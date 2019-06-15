@@ -62,10 +62,18 @@ for (let a of foo) {
 const foo2 = {
   i: 1,
   [Symbol.toPrimitive](num) {
-    return this.i++;
+    return foo2.i++;
   }
 }
-console.log('====output====>>>>', foo2);
+console.log('====output====>>>>', foo2 == 1 && foo2 == 2 && foo2 == 3);
+
+const foo2 = {
+  i: 1,
+  valueOf() {
+    return foo2.i++;
+  }
+}
+console.log('====output====>>>>', foo2 == 1 && foo2 == 2 && foo2 == 3);
 
 const foo3 = {
   i: 1,
