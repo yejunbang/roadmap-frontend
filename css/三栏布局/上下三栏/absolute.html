@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>absolute上下三栏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .main,
+    .top,
+    .bottom {
+      width: 100%;
+    }
+
+    .main {
+      background-color: lightskyblue;
+      position: absolute;
+      top: 200px;
+      bottom: 300px;
+    }
+
+    .top {
+      background-color: lightcyan;
+      height: 200px;
+      position: absolute;
+      top: 0;
+    }
+
+    .bottom {
+      background-color: lightpink;
+      height: 300px;
+      position: absolute;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">这是主区</div>
+  <div class="top">这是上边</div>
+  <div class="bottom">这是下边</div>
+</body>
+
+</html>

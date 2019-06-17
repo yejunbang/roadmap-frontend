@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>absolute上下三栏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .layout {
+      display: flex;
+      display: -webkit-flex;
+      flex-flow: column;
+    }
+
+    .main {
+      background-color: lightskyblue;
+      order: 1;
+      flex: 1;
+    }
+
+    .top {
+      background-color: lightcyan;
+      order: 0;
+      flex: 1;
+    }
+
+    .bottom {
+      background-color: lightpink;
+      order: 2;
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <div class="main">这是主区</div>
+    <div class="top">这是上边</div>
+    <div class="bottom">这是下边</div>
+  </div>
+</body>
+
+</html>

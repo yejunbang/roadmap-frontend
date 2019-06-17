@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>flex上下两栏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .layout {
+      display: flex;
+      display: -webkit-flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .top {
+      background-color: lightcyan;
+      flex: 1;
+    }
+
+    .bottom {
+      background-color: lightpink;
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <div class="top">这是左边</div>
+    <div class="bottom">这是右边</div>
+  </div>
+</body>
+
+</html>

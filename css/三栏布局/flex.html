@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>flex三栏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .layout {
+      display: flex;
+      display: -webkit-flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .main {
+      background-color: lightskyblue;
+      order: 1;
+      flex: 1;
+    }
+
+    .left {
+      background-color: lightcyan;
+      order: 0;
+      flex: 1;
+    }
+
+    .right {
+      background-color: lightpink;
+      order: 2;
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <div class="main">这是主区</div>
+    <div class="left">这是左边</div>
+    <div class="right">这是右边</div>
+  </div>
+</body>
+
+</html>

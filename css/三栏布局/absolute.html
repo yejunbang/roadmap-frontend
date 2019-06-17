@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>absolute三栏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .main {
+      background-color: lightskyblue;
+      position: absolute;
+      left: 200px;
+      right: 300px;
+    }
+
+    .left {
+      background-color: lightcyan;
+      width: 200px;
+      position: absolute;
+      left: 0;
+    }
+
+    .right {
+      background-color: lightpink;
+      width: 300px;
+      position: absolute;
+      right: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">这是主区</div>
+  <div class="left">这是左边</div>
+  <div class="right">这是右边</div>
+</body>
+
+</html>
