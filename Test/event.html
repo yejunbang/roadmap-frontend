@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8>
+  <title>事件委托</title>
+</head>
+
+<body>
+  <div>
+    <ul>
+      <li data-li='1'>1</li>
+      <li data-li='2'>2</li>
+      <li data-li='3'>3</li>
+    </ul>
+  </div>
+  <script>
+    const ul = document.getElementsByTagName('ul')[0]
+    ul.addEventListener('click', function (e) {
+      const children = ul.children
+      for (let i = 0; i < children.length; i++) {
+        if (children[i].getAttribute('data-li') === e.target.getAttribute('data-li')) {
+          console.log('====output====>>>', i + 1);
+          break
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
