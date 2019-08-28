@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>absolute</title>
+  <style>
+    .container {
+      background: linen;
+      position: relative;
+      width: 100%;
+      height: 100px;
+    }
+
+    /* 已知高度 */
+    /* .content {
+      background: lightpink;
+      width: 100%;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      margin-top: -10px;
+    } */
+
+    /* 未知高度 */
+    /* .content {
+      background: lightpink;
+      width: 100%;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    } */
+
+    .content {
+      background: lightpink;
+      width: 100%;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content"></div>
+  </div>
+  <script>
+
+  </script>
+</body>
+
+</html>
