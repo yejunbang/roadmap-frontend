@@ -14,7 +14,7 @@
   // }
   // 自定义
   "function": {
-    "prefix": "fn",
+    "prefix": "fun",
     "body": [
       "function $1($2) {\r\n\t$3\r\n}"
     ],

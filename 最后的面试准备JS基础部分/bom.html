@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>web api 1</title>
+</head>
+<!--  ECMAScript - JavaScript的核心: 描述了语言的基本语法和数据类型，ECMAScript是一套标准 -->
+<!-- BOM - 浏览器对象模型: 通过BOM可以操作浏览器窗口，比如：弹出框、控制浏览器跳转、获取分辨率等 -->
+<!-- Window对象是BOM的顶层对象, 操作有：刷新浏览器、后退、前进、在浏览器中输入URL -->
+
+<!-- DOM - 文档对象模型: DOM可以把HTML看做是文档树，通过DOM提供的API可以对树上的节点进行操作 -->
+
+<body>
+  <!-- 常用api -->
+  <script>
+    // 获取的是窗口相对于屏幕左上角的位置， 当浏览器缩小时，跟着变化
+    console.log('====output===screenX=>>>', window.screenX);
+    console.log('====output===screenY=>>>', window.screenY);
+
+    // 浏览器视口大小
+    console.log('====output==innerHeight==>>>', window.innerHeight);
+    console.log('====output==innerWidth==>>>', window.innerWidth);
+    window.onload = function () {
+      // 当页面加载完成执行
+      // 当页面完全加载所有内容（包括图像、脚本文件、CSS 文件等）执行
+    }
+    window.onunload = function () {
+      // 当用户退出页面时执行
+    }
+    // setTimeout()和clearTimeout()
+    let timer = setTimeout(function () {
+      console.log('hello setTimeout');
+    }, 1000)
+    clearTimeout(timer)
+    // setInterval()和clearInterval()
+    let inter = setInterval(function () {
+      console.log('hello setInterval');
+    }, 1000)
+    clearInterval(inter)
+    console.log(location.href) // https://juejin.im/timeline/frontend?a=10&b=10#some
+    console.log(location.protocol) // https:
+    console.log(location.pathname) // /timeline/frontend
+    console.log(location.search) // ?a=10&b=10
+    console.log(location.hash) // #some
+
+    history.back() // 后退  等于 history.go(-1)
+    history.forward() // 前进 等于 history.go(1)
+    history.go()
+
+    // navigator对象
+    console.log('====output====>>>', navigator.userAgent);
+    // 通过userAgent可以判断用户浏览器的类型
+    // var isChrome = navigator.userAgent.indexOf('Chrome')
+
+    navigator.platform
+    // 通过platform可以判断浏览器所在的系统平台类型.
+  </script>
+</body>
+
+</html>

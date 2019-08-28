@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <title>websocket</title>
+</head>
+
+<body>
+  <script>
+    const ws = new WebSocket('ws://localhost:8090')
+    ws.onopen = function () {
+      ws.send('hello')
+    }
+    ws.onmessage = function (result) {
+      console.log('====output====>>>', result.data);
+    }
+  </script>
+</body>
+
+</html>

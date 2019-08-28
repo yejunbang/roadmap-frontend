@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>t</title>
+</head>
+
+<body>
+  <div></div>
+  <script>
+    const div = document.querySelector('div')
+    div.style.background = 'red'
+    div.style.height = '100px'
+    div.style.width = '100px'
+    div.style.position = 'absolute'
+    div.style.left = '10px'
+    div.style.top = '10px'
+    setTimeout(() => {
+      for (let i = 10,j=2; i < 100; i++) {
+        setTimeout(() => {
+          div.style.left = `${i}px`
+        }, i*100)
+      }
+    }, 1000)
+  </script>
+</body>
+
+</html>

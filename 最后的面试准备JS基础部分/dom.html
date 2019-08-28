@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>web api 1</title>
+</head>
+<!--  ECMAScript - JavaScript的核心: 描述了语言的基本语法和数据类型，ECMAScript是一套标准 -->
+<!-- BOM - 浏览器对象模型: 通过BOM可以操作浏览器窗口，比如：弹出框、控制浏览器跳转、获取分辨率等 -->
+<!-- Window对象是BOM的顶层对象, 操作有：刷新浏览器、后退、前进、在浏览器中输入URL -->
+
+<!-- DOM - 文档对象模型: DOM可以把HTML看做是文档树，通过DOM提供的API可以对树上的节点进行操作 -->
+
+<body>
+  <div id='container' style='border:10px #ccc solid; padding:20px'>
+    <ul id='header'>
+      <li class='item' name='my_li'>1</li>
+      <li class='item' name='my_li'>2</li>
+      <li class='item' name='my_li'>3</li>
+      <li class='item' name='my_li'>4</li>
+    </ul>
+  </div>
+  <script>
+    // 文档对象模型（Document Object Model，简称DOM）
+    // DOM tree
+    // 获取元素
+    const div = document.getElementById('container')
+    const li = document.getElementsByTagName('li')
+    const liClass = document.getElementsByClassName('item')
+    const liNames = document.getElementsByName('my_li')
+    const firstLi = document.querySelector('.item') // 返回第一个匹配的元素
+    const lis = document.querySelectorAll('.item')
+
+    // 获取视口大小
+    console.log('====output===clientHeight=>>>', document.body.clientHeight);
+    console.log('====output===clientWidth=>>>', document.body.clientWidth);
+
+    // 事件
+    const ul = document.getElementById('header')
+
+    function cc(event) {
+      console.log('====output====>>>click', event.clientX + '_' + event.clientY); // 点击的坐标
+      event.stopPropagation()
+    }
+    ul.addEventListener('click', cc, false)
+    // 回调方法必须抽出来
+    // ul.removeEventListener('click', cc, false)
+
+
+    ul.setAttribute('class', 'my_ul_1')
+    ul.classList.add('my_ul_2', 'my_ul_3', 'my_ul_4', 'my_ul_5')
+    ul.classList.remove('my_ul_4')
+    ul.classList.toggle('my_ul_5') // 存在则删除，不存在则添加
+    ul.classList.replace('my_ul_2', 'my_ul_2_1')
+    const clazz = ul.getAttribute('class')
+    console.log('====output====>>>', clazz);
+    ul.removeAttribute('class')
+
+
+    ul.style.background = 'red'
+    ul.style.width = '300px'
+    ul.style.height = '400px'
+
+    const p = document.createElement('p')
+    p.innerText = 'hello world'
+    div.appendChild(p)
+
+    const li5 = document.createElement('li')
+    li5.innerText = '5'
+    ul.insertBefore(li5, li[2])
+
+
+    // 删除自己
+    li[2].parentNode.removeChild(li[2])
+
+    console.log(li[2].parentNode);
+    console.log(li[2].childNodes);
+    console.log(li[2].children);
+    console.log(li[2].nextSibling);
+    console.log(li[2].previousSibling);
+    console.log(li[2].nextElementSibling);
+    console.log(li[2].previousElementSibling);
+    console.log(li[2].firstChild);
+    console.log(li[2].lastChild);
+
+
+
+    // 一些距离
+    文档可视区域宽度： document.documentElement.clientWidth
+
+    文档可视区域高度： document.documentElement.clientHeight
+
+    元素的宽度： HTMLElement.offsetWidth
+
+    元素的高度： HTMLElement.offsetHeight
+
+    元素的宽度（ 包括溢出不可见内容）： document.body.scrollWidth
+
+    元素的高度（ 包括溢出不可见内容）： document.body.scrollHeight
+
+    滚动条下拉被卷起来的距离： document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
+
+    滚动条侧拉被卷起来的距离： document.body.scrollLeft || document.documentElement.scrollLeft
+
+    网页正文部分上： window.screenTop
+
+    网页正文部分左： window.screenLeft
+
+    相对于父元素的上位移： HTMLElement.offsetTop（ 在元素的包含元素不含滚动条的情况下）
+
+    相对于父元素的左位移： HTMLElement.offsetLeft（ 在元素的包含元素不含滚动条的情况下）
+  </script>
+</body>
+
+</html>
