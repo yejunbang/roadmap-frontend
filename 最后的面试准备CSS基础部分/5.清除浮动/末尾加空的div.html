@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BFC清除浮动</title>
+  <style>
+    .container {
+      background: linen;
+      border: 1px solid black;
+    }
+
+    .content {
+      background: lightpink;
+      float: left;
+      width: 300px;
+      height: 300px;
+    }
+
+    .clear {
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content"></div>
+    <div class="clear"></div>
+  </div>
+  <script>
+
+  </script>
+</body>
+
+</html>
