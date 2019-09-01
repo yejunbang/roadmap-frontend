@@ -1,37 +1,33 @@
-// 1. arr[p...q], arr[q+1...r]
-// 2. left<right
-function mergeSort(arr, left, right) {
-  if (left >= right) return
-  let q = parseInt((left + right) / 2)
-  mergeSort(arr, left, q)
-  mergeSort(arr, q + 1, right)
-  mergeArr(arr, left, q, right)
+// 使用哨兵的实现:
+function mergeSort(arr) {
+  if (arr.length < 2) return arr;
+  const mid = Math.floor(arr.length / 2)
+  const left = arr.slice(0, mid)
+  const right = arr.slice(mid)
+  return merge(mergeSort(left), mergeSort(right))
 }
 
-function mergeArr(arr, left, mid, right) {
-  let temp = []
-  let q = mid + 1
-  let p = left
-  let k = 0
-  while (p <= mid && q <= right) {
-    if (arr[p] <= arr[q]) {
-      temp[k++] = arr[p++]
+function merge(left, right) {
+  const result = [];
+  let i = 0;
+  let j = 0;
+  while (i < left.length && j < right.length) {
+    if (left[i] < right[j]) {
+      result.push(left[i++])
     } else {
-      temp[k++] = arr[q++]
+      result.push(right[j++])
     }
   }
-  while (p <= mid) {
-    temp[k++] = arr[p++]
+  while (i < left.length) {
+    result.push(left[i++])
   }
-  while (q <= right) {
-    temp[k++] = arr[q++]
+  while (j < right.length) {
+    result.push(right[j++])
   }
-  for (let i = 0; i < k; i++) {
-    arr[i + left] = temp[i]
-  }
+  return result
 }
 
-const arr = [3, 21, 4, 5, 3, 2, 4, 3, 5, 35, 5]
-mergeSort(arr, 0, arr.length - 1)
-console.log('result=====', arr);
-console.log('real=======', arr.sort((a, b) => a - b));
+const arr = [3, 6, 1, 6, 5, 89, 5, 2, 64, 2, 1, 4]
+console.log('====output====>>>>', mergeSort(arr));
+时间复杂度：平均：O(nlogn) 最好，最坏：O(nlogn)
+空间复杂度：O(n)
