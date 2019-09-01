@@ -1,6 +1,5 @@
 1. v-show和v-if的区别：
 答：都是条件渲染语句，v-show无论true or false都会绘制，在dom中占有着位置，只是显不显示
-相当于visible:hidden
 v-if为true才在dom中，false不会
 在频繁切换显不显示时，建议使用v-show，性能好。
 

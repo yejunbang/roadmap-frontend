@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>文本</title>
+  <style></style>
+</head>
+
+<body>
+  <canvas id="canvas" width='300' height="300"></canvas>
+  <script>
+    const canvas = document.getElementById("canvas");
+    // canvas.style.width = "300px";
+    // canvas.style.height = "300px";
+    canvas.style.background = "#ccc";
+    const context = canvas.getContext("2d");
+    context.strokeStyle = "red";
+    context.font = '500 20px 宋体'
+    context.strokeText('Hello World', 150, 150)
+  </script>
+</body>
+
+</html>

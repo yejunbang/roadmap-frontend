@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>长方形</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <canvas id='canvas' width='300' height="300"></canvas>
+  <script>
+    const canvas = document.getElementById('canvas')
+    canvas.style.background = '#ccc'
+    const context = canvas.getContext('2d')
+    context.fillStyle = 'red'
+    context.beginPath()
+    context.fillRect(10, 10, 200, 200)
+    context.closePath()
+    context.fill()
+    context.clearRect(10, 10, 50, 50)
+  </script>
+</body>
+
+</html>
