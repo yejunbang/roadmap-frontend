@@ -1,4 +1,5 @@
-1. 回调 ---> 回调地狱
-2. promise
-3. generator
-4. async await
+1. 回调-- - > 回调地狱
+2. EventEmitter
+3. promise
+4. generator
+5. async await
