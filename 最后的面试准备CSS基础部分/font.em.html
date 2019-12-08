@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>em test</title>
+  <style>
+    /* 
+      像素px是相对于显示器屏幕分辨率而言
+      em: 相对的是父元素 
+      字体大小默认为16px，1em=16px， 12px= 0.75em
+      为了方便，统一设置body font-size = 62.5%, 则12px=1.2em
+    */
+    body {
+      font-size: 62.5%
+    }
+
+    .test {
+      font-size: 2.0em;
+    }
+
+    div {
+      font-size: 2.0em;
+    }
+
+    p:first-child {
+      font-size: 2.0em;
+    }
+
+    p:nth-child(2n) {
+      font-size: 1.2em;
+    }
+
+
+    /* div {
+      font-size: 2.0em;
+    }
+
+    p:first-child {
+      font-size: 20px;
+    }
+
+    p:nth-child(2n) {
+      font-size: 12px;
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="test">
+    <div>
+      <p>
+        这是一段话
+      </p>
+      <p>
+        另一段话呀
+      </p>
+    </div>
+  </div>
+  <script>
+
+  </script>
+</body>
+
+</html>

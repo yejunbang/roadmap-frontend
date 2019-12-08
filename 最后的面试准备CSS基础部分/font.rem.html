@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>rem test</title>
+  <style>
+    /* rem: 相对的只是HTML根元素 */
+    /* 
+    chrome默认最小字体为12px，要想修改，需要到高级设置中修改最小字体设置，或者使用transform: scale()缩放来做
+    */
+    html {
+      font-size: 1rem;
+    }
+
+    body {
+      font-size: 62.5%;
+      /*不起作用*/
+    }
+
+    div {
+      font-size: 5.0em;
+      /*不起作用*/
+    }
+
+    p:first-child {
+      font-size: 2.0rem;
+    }
+
+    p:nth-child(2n) {
+      font-size: 1.2rem;
+    }
+
+
+    /* div {
+      font-size: 2.0em;
+    }
+
+    p:first-child {
+      font-size: 20px;
+    }
+
+    p:nth-child(2n) {
+      font-size: 12px;
+    } */
+  </style>
+</head>
+
+<body>
+  <div>
+    <p>
+      这是一段话
+    </p>
+    <p>
+      另一段话呀
+    </p>
+  </div>
+  <script>
+
+  </script>
+</body>
+
+</html>
